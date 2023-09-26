@@ -251,7 +251,7 @@ function reset_game(){
 //doesn't work
 //garbage 
 //harder than implementing local storage
-//explodei
+//explodeii
 function progress_bar(coffee_, id){
     if (coffee_.is_progressing() == false) {}
     else{
