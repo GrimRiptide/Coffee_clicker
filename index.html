@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Coffee Maker</title>
+</head>
+<body>
+    <div class = "game_window container">  
+        <div class = "row">
+            <div class = "column display-flex col-sm-11 header">
+                <h1 id = "title">Coffee Game<span><span id = "money">0</span>$</span></h1>
+            </div>
+            <div class = "column display-flex col-sm-1 header">
+                <button onclick=reset_game() id = "reset">Reset</button>
+            </div>
+            <div class="column col-sm-6">
+                <div class = "card coffee" id = "Plain">
+                    <div class = "card-body">
+                        <h3 class="coffee_name">Plain Coffee</h3>
+                        <button onclick= "earn(plain_coffee, 'coffee_0')" type = "button" class="c_name" id = 'coffee_0'>Brew <span id = "earn_0"></span>$</button>
+                        <button onclick="buy(plain_coffee)" type = "button" class ="c_upgrade">Upgrade <span id = "cost_0"></span>$</button>
+                        <button onclick="sell(plain_coffee)" type = "button" class ="c_sell">Sell <span id = "sell_0"></span>$</button>
+                        <button onclick="buy_auto(plain_coffee,'auto_plain')" type = "button" class ="c_auto" id = "auto_plain">Automate <span id = "auto_0"></span>$</button>
+                        <p>lvl <span id = "lvl_0"></span></p>
+
+                        <div class = "w3-border">
+                            <div class="w3-grey progress-bar"id = 'plain_progress'><span id = "plain_label"></span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-sm-6">
+                <div class = "card coffee" id = "Hazelnut">
+                    <div class = "card-body">
+                        <h3 class="coffee_name">Hazelnut Coffee</h3>
+                        <div class = "hazelnut-lockable">
+                            <button onclick= "earn(hazelnut_coffee, 'coffee_1')" type = "button" class='c_name' id = 'coffee_1'>Brew <span id = "earn_1"></span>$</button>
+                            <button onclick="buy(hazelnut_coffee)" type = "button" class ='c_upgrade'>Upgrade <span id = "cost_1"></span>$</button>
+                            <button onclick="sell(hazelnut_coffee)" type = "button" class ="c_sell">Sell <span id = "sell_1"></span>$</button>
+                            <button onclick="buy_auto(hazelnut_coffee,'auto_hazelnut')" type = "button" class ="c_auto " id = 'auto_hazelnut'>Automate <span id = "auto_1"></span>$</button>
+                            <p>lvl <span id = "lvl_1"></span></p>
+                            <div class = 'w3-border'>
+                                <div class="w3-grey progress-bar"><span>3</span> Sec</div>
+                            </div>
+                        </div>
+                        <button onclick = "verify_unlock(hazelnut_coffee, 'unlock_hazelnut', 'hazelnut-lockable')" type = "button" id='unlock_hazelnut'>Locked <span id = "unlock_1"></span>$</button>
+                    </div>
+                </div>
+            </div>
+            <!--too many ids and classes, save me-->
+            <div class="column col-sm-6">
+                <div class = "card coffee" id = "Vanilla">
+                    <div class = "card-body">
+                        <h3 class="coffee_name">Vanilla Coffee</h3>
+                        <div class = "vanilla-lockable">
+                            <button onclick= "earn(vanilla_coffee, 'coffee_1')" type = "button" class='c_name'>Brew <span id = "earn_2"></span>$</button>
+                            <button onclick="buy(vanilla_coffee)" type = "button" class ='c_upgrade'>Upgrade <span id = "cost_2"></span>$</button>
+                            <button onclick="sell(vanilla_coffee)" type = "button" class ="c_sell">Sell <span id = "sell_2"></span>$</button>
+                            <button onclick="buy_auto(vanilla_coffee,'auto_vanilla')" type = "button" class ="c_auto" id = 'auto_vanilla'>Automate <span id = "auto_2"></span>$</button>
+                        
+                            <p>lvl <span id = "lvl_2"></span></p>
+                            <div class = 'w3-border'>
+                                <div class="w3-grey progress-bar"><span>3</span> Sec</div>
+                            </div>
+                        </div>
+                        <button onclick = "verify_unlock(vanilla_coffee, 'unlock_vanilla', 'vanilla-lockable')" type = "button" id='unlock_vanilla'>Locked <span id = "unlock_2"></span>$</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-sm-6">
+                <div class = "card coffee" id = "Spice">
+                    <div class = "card-body">
+                        <h3 class="coffee_name">Pumpkin Spice Coffee</h3>
+                        <div class="spice-lockable">
+                            <button onclick= "earn(spice_coffee, 'coffee_3')" type = "button" class='c_name'>Brew <span id = "earn_3"></span>$</button>
+                            <button onclick="buy(spice_coffee)" type = "button" class ='c_upgrade' >Upgrade <span id = "cost_3"></span>$</button>
+                            <button onclick="sell(spice_coffee)" type = "button" class ="c_sell" >Sell <span id = "sell_3"></span>$</button>
+                            <button onclick="buy_auto(spice_coffee,'auto_spice')" type = "button" class ="c_auto" id = 'auto_spice'>Automate <span id = "auto_3"></span>$</button>
+                            <p>lvl <span id = "lvl_3"></span></p>
+                            <div class = 'w3-border'>
+                                <div class="w3-grey progress-bar"><span>3</span> Sec</div>
+                            </div>
+                        </div>
+                        <button onclick = "verify_unlock(spice_coffee, 'unlock_spice', 'spice-lockable')" type = "button" id='unlock_spice'>Locked <span id = "unlock_3"></span>$</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src = "Coffee.js"></script>
+
+</body>
+</html>
