@@ -64,6 +64,8 @@ class coffee {
     is_unlocked(){
         return this.unlocked;
     }
+
+    //progress bar
     is_progressing(){
         return this.progressing;
     }
@@ -71,7 +73,9 @@ class coffee {
         if (this.progressing == false){
             this.progressing = true;
         }
-        else if (this.progressing == true){
+    }
+    finished_progress(){
+        if (this.progressing == true){
             this.progressing = false;
         }
     }
@@ -99,13 +103,18 @@ class coffee {
     get_automate_cost(){
         return this.automate_cost;
     }
+
+
     //enable functions
     unlock(){
         this.unlocked = true;
     }
     enable_automate(){
         this.automate = true;
+        this.automated_id();
     }
+
+
     //increment functions
     increase_lvl(){
         this.lvl += 1;
@@ -119,12 +128,14 @@ class coffee {
         this.upgrade_cost-= this.cost_increment;
         this.earn -= this.earn_increment;
     }
+
     //update conditions
     update(){
         if (this.lvl == 10){
             this.time_to_earn /= 2.0;
             this.earn_increment *= 2;
             this.cost_increment *= 3;
+            console.log("whoops");
         }
         if (this.lvl == 25){
             this.time_to_earn /= 2.0;
@@ -159,9 +170,12 @@ class coffee {
         }
         this.automated_id();
     }
+    
     automated_id(){
         console.log("why");
         if (this.automate == true){
+            clearInterval(this.set_coffee_interval);
+            clearInterval(this.set_coffee_interval);
             clearInterval(this.set_coffee_interval);
             console.log(this);
             this.set_coffee_interval = setInterval( function(){
@@ -226,7 +240,8 @@ class coffee {
         if (this.lvl > 1){
             let swap = this.lvl;
             this.lvl = 1;
-            for (this.lvl; this.lvl < swap; this.lvl++){
+            for (let i = 1; i < swap; i++){
+                this.lvl++;
                 this.upgrade_cost+= this.cost_increment;
                 this.earn += this.earn_increment;
                 this.update();
@@ -251,7 +266,7 @@ function reset_game(){
 //doesn't work
 //garbage 
 //harder than implementing local storage
-//explodeiii
+//explode
 function progress_bar(coffee_, id){
     if (coffee_.is_progressing() == false) {}
     else{
@@ -265,7 +280,7 @@ function progress_bar(coffee_, id){
                 coffee_.change_progress();
                 return;
             }
-        }.bind(this), (coffee_.get_time_in_ms()/100));
+        }.bind(coffee_), (coffee_.get_time_in_ms()/100));
       }
 }
 
@@ -392,7 +407,7 @@ let money = Money_obj_deserialized.value;
 let coffee_list = [];
 //make coffee
 //implement coffee requirement
-let plain_coffee = new coffee("Plain",50,1,5,2,0,0); //name, money made, time for money to be made, cost of upgrading lvl, increasing cost of upgrading, unlock cost
+let plain_coffee = new coffee("Plain",1,1,5,2,0,0); //name, money made, time for money to be made, cost of upgrading lvl, increasing cost of upgrading, unlock cost
 let hazelnut_coffee = new coffee("Hazelnut",15,3,20,5, 50,1);
 let vanilla_coffee = new coffee("Vanilla",50,7,35,9, 200,2);
 let spice_coffee = new coffee("Spice",500,20,200,60, 2000,3);
@@ -440,9 +455,6 @@ hazelnut_coffee.match_variables_to_lvl();
 vanilla_coffee.match_variables_to_lvl();
 spice_coffee.match_variables_to_lvl();*/
 
-
-
-const body = document.body;
 
 //To implement when I'm feeling not lazy.
 //As a matter of fact, past me, I implemented this precisely because I was feeling lazy.
