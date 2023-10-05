@@ -28,8 +28,8 @@
                         <button onclick="buy_auto(plain_coffee,'auto_plain')" type = "button" class ="c_auto" id = "auto_plain">Automate <span id = "auto_0"></span>$</button>
                         <p>lvl <span id = "lvl_0"></span></p>
 
-                        <div class = "w3-border">
-                            <div class="w3-grey progress-bar"id = 'plain_progress'><span id = "plain_label"></span> </div>
+                        <div class = "w3-border progress-bar-containerC">
+                            <div class="w3-grey progress-bar" id = 'progress_0'><span id = "plain_label"></span> </div>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                             <button onclick="buy_auto(hazelnut_coffee,'auto_hazelnut')" type = "button" class ="c_auto " id = 'auto_hazelnut'>Automate <span id = "auto_1"></span>$</button>
                             <p>lvl <span id = "lvl_1"></span></p>
                             <div class = 'w3-border progress-container'>
-                                <div class="w3-grey progress-bar"><span>3</span> Sec</div>
+                                <div class="w3-grey progress-bar" id = 'progress_1'><span id = "hazelnut_label"></span> Sec</div>
                             </div>
                         </div>
                         <button onclick = "verify_unlock(hazelnut_coffee, 'unlock_hazelnut', 'hazelnut-lockable')" type = "button" id='unlock_hazelnut'>Locked <span id = "unlock_1"></span>$</button>
@@ -64,8 +64,8 @@
                             <button onclick="buy_auto(vanilla_coffee,'auto_vanilla')" type = "button" class ="c_auto" id = 'auto_vanilla'>Automate <span id = "auto_2"></span>$</button>
                         
                             <p>lvl <span id = "lvl_2"></span></p>
-                            <div class = 'w3-border'>
-                                <div class="w3-grey progress-bar"><span>3</span> Sec</div>
+                            <div class = 'w3-border progress-container'>
+                                <div class="w3-grey progress-bar" id = 'progress_2'><span id = "vanilla_label"></span> Sec</div>
                             </div>
                         </div>
                         <button onclick = "verify_unlock(vanilla_coffee, 'unlock_vanilla', 'vanilla-lockable')" type = "button" id='unlock_vanilla'>Locked <span id = "unlock_2"></span>$</button>
@@ -82,8 +82,8 @@
                             <button onclick="sell(spice_coffee)" type = "button" class ="c_sell" >Sell <span id = "sell_3"></span>$</button>
                             <button onclick="buy_auto(spice_coffee,'auto_spice')" type = "button" class ="c_auto" id = 'auto_spice'>Automate <span id = "auto_3"></span>$</button>
                             <p>lvl <span id = "lvl_3"></span></p>
-                            <div class = 'w3-border'>
-                                <div class="w3-grey progress-bar"><span>3</span> Sec</div>
+                            <div class = 'w3-border progress-container'>
+                                <div class="w3-grey progress-bar" id = 'progress_3'><span id = "spice_label"></span> Sec</div>
                             </div>
                         </div>
                         <button onclick = "verify_unlock(spice_coffee, 'unlock_spice', 'spice-lockable')" type = "button" id='unlock_spice'>Locked <span id = "unlock_3"></span>$</button>

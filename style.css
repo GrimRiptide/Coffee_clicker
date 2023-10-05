@@ -1,3 +1,6 @@
+
+
+
 body{
     background-color: grey;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -9,19 +12,35 @@ body{
     justify-content:center;
     flex-direction:row;
     height: 95vh;
+    min-height:700px;
+    min-width:700px;
     width: 70vw;
     background-color: rgb(200,150,40);
-    margin: 1% auto auto auto;
+    border: 10px solid brown;
+    border-radius:15px;
+    margin: 1vw auto auto auto;
 }
+
+@media (max-width: 767px) { 
+    .game_window{
+        overflow:auto;
+    }
+}
+
 #money{
     flex-direction:row;
 }
+
+
+
 #title{
     display:flex;
     text-align:center;
     justify-content:center;
     flex-direction: column;
     margin-right: 5%;
+    margin-top:1vh;
+
 }
 .meh{
     display:flex;
@@ -34,12 +53,15 @@ body{
     color:white;
     border: 5px solid darkred;
 }
+
 .coffee{
     background-color: chocolate;
     border:5px solid;
     border-color:darkred;
-    height:230px;
-    width:480px;
+    min-height:240px;
+    height:20vh;
+    width:25vw;
+    min-width:300px;
     margin:20px;
     margin-left:8%;
     padding:10px;
@@ -84,12 +106,12 @@ button{
     width:0%;
     border: 2px;
     border-radius: 10px;
-    --width: 0;
 }
 .progress-bar{
     height:20px;
     background-color:blue;
     width: 0;
+    transition: 1s ease 0.3s;
     max-width:calc(100% - 1em);
     padding:1em;
 

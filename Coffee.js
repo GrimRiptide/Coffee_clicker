@@ -14,6 +14,7 @@ class coffee {
         this.unlocked;
         this.automate = false;
         this.automate_cost = upgrade_cost * 20;
+        this.progress_bar_id = "progress_"+ number.toString();
         if (this.unlock_cost == 0){
             this.unlocked = true;
         }
@@ -102,6 +103,9 @@ class coffee {
     }
     get_automate_cost(){
         return this.automate_cost;
+    }
+    get_progress_id(){
+        return this.progress_bar_id;
     }
 
 
@@ -253,10 +257,21 @@ class coffee {
 //out of class functions
 
 function reset_game(){
-    localStorage.clear();
-    localStorage.clear();
-    localStorage.clear();
-    localStorage.clear();
+    setTimeout(function(){
+        localStorage.clear()
+    }, 100);
+    setTimeout(function(){
+        localStorage.clear()
+    }, 100);
+    setTimeout(function(){
+        localStorage.clear()
+    }, 100);
+    setTimeout(function(){
+        localStorage.clear()
+    }, 100);
+    setTimeout(function(){
+        localStorage.clear()
+    }, 100);
     setTimeout(function(){
         localStorage.clear()
         location.reload();
@@ -267,21 +282,15 @@ function reset_game(){
 //garbage 
 //harder than implementing local storage
 //explode
-function progress_bar(coffee_, id){
+function progress_bar(coffee_){
     if (coffee_.is_progressing() == false) {}
     else{
-        let elem = document.getElementById(id);
-        setInterval(function(){
-            const comp = getComputedStyle(elem);
-            const width = parseFloat(comp.getPropertyValue('--width')) ?? 0;
-            elem.style.setProperty('--width',width+1)
-            if (elem.style.getPropertyValue("--width") == 100){
-                elem.style.setProperty('--width',width+.1)
-                coffee_.change_progress();
-                return;
-            }
-        }.bind(coffee_), (coffee_.get_time_in_ms()/100));
-      }
+        let elem = document.getElementById(coffee_.get_progress_id());
+        elem.style.transition = (coffee_.get_time_in_ms()/1000);
+        elem.style.width = 100;
+        coffee_.finished_progress();
+
+    }
 }
 
 //face functions
@@ -336,6 +345,7 @@ function verify_unlock(coffee_, id, cs){
     }
 }
 //unfortunately, setting display to none then back to block undos formatting, and I can't figure out how to fix it
+//I fixed it, but forgot how I did it
 function unlock(id, cs){
     let lock = document.getElementById(id);
     lock.style.display="none";
