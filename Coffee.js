@@ -258,22 +258,18 @@ class coffee {
 
 function reset_game(){
     setTimeout(function(){
-        localStorage.clear()
+        localStorage.clear();
     }, 100);
     setTimeout(function(){
-        localStorage.clear()
+        localStorage.clear();
     }, 100);
     setTimeout(function(){
-        localStorage.clear()
+        localStorage.clear();
     }, 100);
     setTimeout(function(){
-        localStorage.clear()
+        localStorage.clear();
     }, 100);
     setTimeout(function(){
-        localStorage.clear()
-    }, 100);
-    setTimeout(function(){
-        localStorage.clear()
         location.reload();
     }, 1000);
 }
