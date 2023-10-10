@@ -257,21 +257,9 @@ class coffee {
 //out of class functions
 
 function reset_game(){
-    setTimeout(function(){
-        localStorage.clear();
-    }, 100);
-    setTimeout(function(){
-        localStorage.clear();
-    }, 100);
-    setTimeout(function(){
-        localStorage.clear();
-    }, 100);
-    setTimeout(function(){
-        localStorage.clear();
-    }, 100);
-    setTimeout(function(){
+    localStorage.clear();
+        window.localStorage.clear();
         location.reload();
-    }, 1000);
 }
 
 //doesn't work
