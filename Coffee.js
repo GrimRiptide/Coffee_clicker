@@ -258,8 +258,11 @@ class coffee {
 
 function reset_game(){
     localStorage.clear();
-        window.localStorage.clear();
-        location.reload();
+    window.localStorage.clear();
+    window.localStorage.clear();
+    window.localStorage.clear();
+    window.localStorage.clear();
+    location.reload();
 }
 
 //doesn't work
